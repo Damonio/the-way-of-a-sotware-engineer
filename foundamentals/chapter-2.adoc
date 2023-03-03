@@ -1,0 +1,3 @@
+= Computer fundamentals
+
+Now that we have defined what's software, we need to start talk about a computer, since this is where the software will be executed. A computer is an electronic device that can execute software. At it's core computer work in a series of 0 and 1 that represent that there is presence of electric energy or not (a bit) then from there, the minimum amount of bits required to hold a character from all the possible combinations was 8 bits which was named byte.
