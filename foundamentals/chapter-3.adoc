@@ -1,6 +1,6 @@
 = Common terms in software
 
-Before we start coding something, we have to have a common understanding of the most common terms in software that we can apply across any language
+Before we start coding something, we have to have a common understanding of the most common terms in software that we can apply across any language, while this is not a complete list, this is the basis for any software code. Most of the code bases that you will see out there will be structured using this concepts.
 
 == Data type
 
@@ -110,3 +110,22 @@ damianNow = new Human(30,'Damian', damianBankAccount)
 ----
 
 Notice that we can create an instance of the previous example of the class with a bank account or without it
+
+== Conditions
+As it's name implies, is a condition that has to be met to execute a certain piece of code
+
+[source]
+----
+ if age>21 then
+   print "You are an adult"
+ else
+   print "You are not an adult yet"
+----
+
+== Loop
+A block of code that will execute while the initial condition is meet
+
+[source]
+while age<21
+  print "You are not allowed as you are not an adult yet, come back later"
+
