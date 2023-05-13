@@ -1,0 +1,14 @@
+= Programming Paradigms
+
+As of writing this, the 2 most common and misunderstood paradigms are object-oriented and functional programming. The reason that I believe these concepts are widely misunderstood is mainly because 2 reasons
+
+1. In software engineering it's very common to see people discuss which tool it's better for all the problems as they want to use the same tool for everything, this usually happens too with "Favor inheritance over Composition" (it will be mentioned later the uses of this).
+
+ In a more real life example we can use the example of the screwdriver vs the hammer. You use a screwdriver to tighten a screw, you might use it to hammer a nail, but most likely you will face some challenges while doing that. In the same manner, you will use a hammer to hammer a nail, you might use a hammer to hammer a screw, but you might end up with something that it's not the desired result.
+
+2. Usually when learning a programming concept, it's very common that it comes mixed with some other things, like a language grammar, syntax or constraints, that makes it harder to understand, for the purposes of illustrating a concept, the concepts presented in this book will be as neutral as possible, which might end not being usable in a real language, but that might help to understand the concept
+
+
+
+include::programming-paradigms/object-oriented-programming.adoc[leveloffset=1]
+include::programming-paradigms/functional-programming.adoc[leveloffset=1]

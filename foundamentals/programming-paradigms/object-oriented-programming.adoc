@@ -1,0 +1,5 @@
+= Object Oriented Programming
+
+Object-oriented programming comes from the understanding that programs can be represented in objects which contains a properties and behaviour specific to the object itself. The most important part about an object is the state, and it's what it makes it different from functional programing.
+
+An object will have an inner state that will represent the state of that object. For example
