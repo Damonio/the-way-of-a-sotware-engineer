@@ -9,4 +9,8 @@ Fundamentals is aimed to the initial step in the career of a software engineer. 
 I want to keep this series as an "open source" as I want to create a starting point for software engineers across the industry to add anything that I might be missing and also use this material as a reference for anyone that might get lost in their path to find the way either by themselves or by a recommendation of a good friend or mentor.
 
 include::chapter-1.adoc[leveloffset=1]
+
+== continue this:
+
 include::chapter-2.adoc[leveloffset=1]
+include::chapter-3.adoc[leveloffset=1]

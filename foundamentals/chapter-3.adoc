@@ -1,0 +1,112 @@
+= Common terms in software
+
+Before we start coding something, we have to have a common understanding of the most common terms in software that we can apply across any language
+
+== Data type
+
+A representation of certain value, for example, age is an integer number, name is a combination of characters, pi is a floating number
+
+== Common data types
+
+|===
+|Type  |Example
+|Integer | 1,2,10
+|Character | a,b,c
+|String(sometimes known as a string of characters) | hello world, goodbye
+|===
+
+== Constant
+
+A named fixed value, for example pi = 3.14, i = √–1
+
+== Variable
+
+A named variable value, for example age=30
+
+== Method
+
+A named series of instructions, for example:
+
+[source]
+calculateArea
+  lenght=2
+  width=3
+  result=length*width
+  return result
+
+== Comment
+
+A piece of text within a code base that it's not used by the computer, and it's only used by any person reading the code
+
+[source]
+//Method that calculates the area
+methodName
+  // provided lenght
+  x=2
+  // provided width
+  y=3
+  // calculated result
+  z=x*y
+  return z
+
+Note: I personally do not like to include comments in my code as a comment does not need to be updated once someone updates a comment plus it's always going to be better to understand what the line of code does than a comment, as a comment is just a representation of what the author of the line of code tries to represent, but it might not be what the software is actually doing.
+
+That being said, depending on certain situations, you won't be able to write a code that it's self-explanatory due to certain limitations (specially certain technologies which are very restrictive) so use it wisely.
+
+== Class
+
+A self-contained named code that contains properties (constants or variables) and/or methods
+
+[source]
+----
+class Human
+  int age
+  string name
+  BankAccount bankAccount
+
+  presentYourself
+    print "hello my name is" + name + " and I'm " + age + " old"
+----
+
+== Constructor
+
+A method that only purpose it's to be able to create an instance of a class
+
+[source]
+----
+class Human
+  int humanAge
+  string humanName
+  BankAccount humanBankAccount
+
+  Human(age, name)
+    humanAge=age
+    humanName=name
+
+  Human(age, name, bankAccount)
+    humanAge=age
+    humanName=name
+    humanBankAccount=bankAccount
+
+class BankAccount
+  float balance
+
+  BankAccount(initialBalance)
+    balance=initialBalance
+----
+
+Notice that this class contains 2 constructors, that means that if we want to create a human instance, we need to have the age and the name, but we might not need the bank account, as not everyone has a bank account
+
+== Object
+
+An instance of a class
+
+[source]
+----
+damianWhenHeWasYoung = new Human(15,'Damian')
+
+damianBankAccount = new BankAccount(0)
+damianNow = new Human(30,'Damian', damianBankAccount)
+----
+
+Notice that we can create an instance of the previous example of the class with a bank account or without it

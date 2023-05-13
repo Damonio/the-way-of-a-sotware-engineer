@@ -21,4 +21,4 @@ A simple recipe to make Guacamole
 6. Add the chili, tomatoes, onion and cilantro
 7. Mix
 
-Software in certain sense is the same, is a series of instructions well-defined that will be executed in the order specified and will produce the same output given that the same input it's given
+Software in certain sense is the same, is a series of instructions well-defined that will be executed in the order specified and will produce the same output given that the same input its given
