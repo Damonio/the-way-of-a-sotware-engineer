@@ -2,4 +2,6 @@
 
 Now that we have defined what's software, we need to start talk about a computer, since this is where the software will be executed.
 
-A computer is an electronic device that can execute software. At it's core computer work in a series of 0 and 1 that represent that there is presence of electric energy or not (a bit) then from there the minimum amount of bits required to hold a character from all the possible combinations was 8 bits which was named byte.
+A computer is an electronic device that can execute software. At it's core computer have everything based on a series of 0s and 1s that represent a presence of electric energy or not (a bit) then from there the minimum amount of bits required to hold a character from all the possible combinations was 8 bits which was named byte.
+
+A computer contains a processing unit (CPU), a memory that holds any given instruction to execute which loses all values once the computer is off (RAM) and a long term memory that doesn't lose all it's values once it's off

@@ -3,11 +3,11 @@
 To define what's required as a fundamental as a software engineer, we need to start defining what it's a software engineer. While this might not be an exact definition, it will help to establish the starting point
 
 Software, from the combination of soft and ware which in a rough translation would be something easy to mold that can be manufactured
-Engineer a person specialized in an area that can invent that can create new things on the field of the specialization based on his knowledge
+Engineer is a person specialized in an area that can invent and/or create new things on the field of the specialization based on his knowledge
 
 So in rough terms, a software engineer is someone specialized in software that can create software.
 
-A good practical example of what it's software in a very simple terms that I learnt in school is that software can be compared to a recipe. A series of instructions out of any ambiguity that if they are followed as described you will always get the same result, like baking a cake.
+A good practical example of what it's software in a very simple terms that I learnt in school is that software can be compared to a recipe. A series of instructions out of any ambiguity, if these instructions are followed as described you will always get the same result, like baking a cake.
 
 For example:
 
@@ -21,4 +21,4 @@ A simple recipe to make Guacamole
 6. Add the chili, tomatoes, onion and cilantro
 7. Mix
 
-Software in certain sense is the same, is a series of instructions well-defined that will be executed in the order specified and will produce the same output given that the same input its given
+Software in certain sense is the same, is a series of a well-defined instructions that will be executed in the order specified and will produce the same output given that the same input its provided

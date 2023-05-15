@@ -2,9 +2,9 @@
 
 [preface]
 
-The main idea behind "The way of the software engineer" is to provide a general guide along all the steps of a software engineer carer. As a software engineer I have felt a couple of times in my career that overall the path is unclear and I have experienced the feeling of walking in a direction that it doesn't seem to be where I want to be.
+The main idea behind "The way of the software engineer" is to provide a general guide along all the steps of a software engineer carer. As a software engineer I have felt a couple of times in my career that the software engineer path is unclear and a constant feeling of walking in a direction that it doesn't seem to be where I want to be.
 
-Fundamentals is aimed to the initial step in the career of a software engineer. When I was in school I felt that either that I was missing some important classes or that the classes were not very explicit. When after 8 years of working I still feel that I'm missing some core things but the feeling have been way less frequently.
+Fundamentals is aimed to the initial step in the career of a software engineer. When I was in school I felt that either that I was missing some important classes or that something was missing. After 8 years of working as a software engineer I still feel that I'm missing something but the feeling have been way less frequent.
 
 I want to keep this series as an "open source" as I want to create a starting point for software engineers across the industry to add anything that I might be missing and also use this material as a reference for anyone that might get lost in their path to find the way either by themselves or by a recommendation of a good friend or mentor.
 

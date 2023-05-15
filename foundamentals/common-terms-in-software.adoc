@@ -129,3 +129,9 @@ A block of code that will execute while the initial condition is meet
 while age<21
   print "You are not allowed as you are not an adult yet, come back later"
 
+== DRY
+Do not repeat yourself, a very important yet sometimes ignored software principle, the main idea is that you should not repeat code as this will create a lot of problems in the long run
+
+== KISS
+Keep it short and simple. Usually in software engineering, it's very common to see "over-engineered" projects, that are more complicated that it should be, in general the rule is that do not create things that you will need
+
