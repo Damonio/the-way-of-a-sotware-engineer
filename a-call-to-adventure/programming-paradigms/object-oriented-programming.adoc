@@ -58,20 +58,45 @@ In this example, both the human and the rabbit have the ability to walk and run 
 == Encapsulation
 This concept says helps you by allowing you to hide parts of your object that you don't want to expose to other parts of your software.
 
-Depending on the programming language there are multiple access modifiers, for now we will concentrate in the most restrictive which is the `private` modifier.
+Depending on the programming language there are multiple access modifiers, for now we will concentrate in the most common and restrictive which is the `private` modifier.
 
 In this example using the Human as a reference, we can have a software that calculates the velocity of a human. Once a human gets to a certain age it cannot change its height (there are now surgeries that can achieve this but for this example we will specify that the height cannot be changed).
 
-Once a property is exposed, it can be changed, but we do not want anyone to change the height once it has been defined, so we can mark it as private, which means that it can only be visible
+Once a property is exposed, it can be changed from other parts of the software, but we do not want anyone to change the height once it has been defined, so we can mark it as private, which means that it can only be visible
 
 [%linenums,java]
 ----
 human
+  private name
   private height
   weight
-  motherLanguage
 
-  walk
-  run
-  greet
+  human(name, height, weight)
+    name = name
+    height = height
+    weight = weight
+
+  runSpeedInOneMeter
+    constantForWeightEffort = 1000
+    percentageOfHeightThatRepresentsLenghts = 50
+    stepSpeed = (height * 50) - (weight/constantForWeightEffort)
+    return stepSpeed
 ----
+
+Now if we have a piece of software that uses this human object to calculate the velocity of a person in a distance provided in this software. This software won't know that the human object has a property height, it will only know that there is a property called weight, that can be changed at any point in time by the velocity software.
+
+
+[%linenums,source]
+----
+calculateSpeed(distance)
+    damian = new Human(Damian, 1.90cm, 85kg)
+    //This will be valid as the weight property is visible and the weight can be altered later
+    damian.weight = 90kg
+
+    //This won't be valid as the height is not visible for any code that it's not inside the human class
+    damian.height = 1.95cm
+----
+
+The use of this principle comes when you want to hide details that you do not want other parts of your software that you might not even control to depend on these details. Most commonly because these details might change in the future and once that they change it will force the users of this software to change as well.
+
+If you have worked with software for some time, you can see that something that was valid before is no longer valid, while there are some reasons that the maintainer of that software wants to force the users because the initial design no longer makes sense, some other times is because the maintainer was not careful enough to hide those details and when he had to change it, all the users had to pay the consequences.
