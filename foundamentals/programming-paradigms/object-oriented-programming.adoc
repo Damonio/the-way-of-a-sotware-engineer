@@ -6,4 +6,72 @@ An object will have an inner state that will represent the current state of that
 
 For example:
 
+A human has properties like
 
+[%linenums,source]
+----
+human
+  height
+  weight
+  motherLanguage
+----
+
+While it also has actions that can perform like
+
+[%linenums,source]
+----
+human
+  walk
+  run
+  greet
+----
+
+But this is not all OOP is about, it has also 4 principles that helps build software: abstraction, encapsulation, inheritance and polymorphism
+
+== Abstraction
+This principle refers to the ability to leave more ambiguity in the software, either because we do not know all the details yet and we want to define them in the future, or because there are certain concrete implementations that could share certain abstractions.
+
+Using the example above a Human and a Rabbit are mammals, in this context, both of them share the properties height and weight, but as Rabbit does not use a language to communicate, they do not share a language. In the same way, mammals can walk and run, but only the human can greet.
+
+With this in mind we can keep it DRY group together the same code into the mammal class
+
+[%linenums,source]
+----
+mammal
+  height
+  weight
+
+  walk
+  run
+
+human extends mammal
+  motherLanguage
+
+  greet
+
+rabbit extends mammal
+
+----
+
+In this example, both the human and the rabbit have the ability to walk and run because they are extending the definition of a mammal.
+
+== Encapsulation
+This concept says helps you by allowing you to hide parts of your object that you don't want to expose to other parts of your software.
+
+Depending on the programming language there are multiple access modifiers, for now we will concentrate in the most restrictive which is the `private` modifier.
+
+In this example using the Human as a reference, we can have a software that calculates the velocity of a human. Once a human gets to a certain age it cannot change its height (there are now surgeries that can achieve this but for this example we will specify that the height cannot be changed).
+
+Once a property is exposed, it can be changed, but we do not want anyone to change the height once it has been defined, so we can mark it as private, which means that it can only be visible
+
+[%linenums,java]
+----
+human
+  private height
+  weight
+  motherLanguage
+
+  walk
+  run
+  greet
+----
