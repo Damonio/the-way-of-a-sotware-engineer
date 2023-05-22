@@ -29,31 +29,28 @@ human
 But this is not all OOP is about, it has also 4 principles that helps build software: abstraction, encapsulation, inheritance and polymorphism
 
 == Abstraction
-This principle refers to the ability to leave more ambiguity in the software, either because we do not know all the details yet and we want to define them in the future, or because there are certain concrete implementations that could share certain abstractions.
+This principle refers to the ability to leave more ambiguity in the software, either because we do not know all the details yet, but we have enough to define some to be used in the future, or because there are certain concrete implementations that could share certain abstractions.
 
-Using the example above a Human and a Rabbit are mammals, in this context, both of them share the properties height and weight, but as Rabbit does not use a language to communicate, they do not share a language. In the same way, mammals can walk and run, but only the human can greet.
+For example, we have a software that will drive a car, we know that we have a car and this software has to start the engine, we do not have yet the type or car (electric, gas or hybrid), and we do not know the brand of the car, yet we know that all the cars have an engine, and the engine has to be started, we just don't know how the engine will start, we can leave the definition that the car will have an action to start an engine, depending on the language and the context, you will have to use certain keywords, but the important part is that you will be able to define that the car has a property called engine and the engine has an action to start the engine.
 
-With this in mind we can keep it DRY group together the same code into the mammal class
+So the result will look like the next:
 
-[%linenums,source]
+[source]
 ----
-mammal
-  height
-  weight
-
-  walk
-  run
-
-human extends mammal
-  motherLanguage
-
-  greet
-
-rabbit extends mammal
-
+Car
+  engine
+  abstract startEngine
 ----
 
-In this example, both the human and the rabbit have the ability to walk and run because they are extending the definition of a mammal.
+Then later once that we have an specific car which we know how to start the engine, we can give the method definition
+
+[source]
+----
+Honda
+  engine
+  startEngine
+    //code to start the engine in a honda car
+----
 
 == Encapsulation
 This concept says helps you by allowing you to hide parts of your object that you don't want to expose to other parts of your software.
@@ -100,3 +97,30 @@ calculateSpeed(distance)
 The use of this principle comes when you want to hide details that you do not want other parts of your software that you might not even control to depend on these details. Most commonly because these details might change in the future and once that they change it will force the users of this software to change as well.
 
 If you have worked with software for some time, you can see that something that was valid before is no longer valid, while there are some reasons that the maintainer of that software wants to force the users because the initial design no longer makes sense, some other times is because the maintainer was not careful enough to hide those details and when he had to change it, all the users had to pay the consequences.
+
+== Inheritance
+This principle refers to the ability to inherit the object properties,
+
+Using the example above an about a Human, we know that a Rabbit is a mammals as well as a Human, in this context, both of them share the properties height and weight, but as Rabbit does not use a language to communicate, they do not share a language. In the same way, mammals can walk and run, but only the human can greet.
+
+With this in mind we can keep it DRY group together the same code into the mammal class
+
+[%linenums,source]
+----
+mammal
+  height
+  weight
+
+  walk
+  run
+
+human extends mammal
+  motherLanguage
+
+  greet
+
+rabbit extends mammal
+
+----
+
+In this example, both the human and the rabbit have the ability to walk and run because they are extending the definition of a mammal.
