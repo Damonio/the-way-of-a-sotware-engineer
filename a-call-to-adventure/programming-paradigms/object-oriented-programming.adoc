@@ -29,7 +29,7 @@ human
 But this is not all OOP is about, it has also 4 principles that helps build software: abstraction, encapsulation, inheritance and polymorphism
 
 == Abstraction
-This principle refers to the ability to leave more ambiguity in the software, either because we do not know all the details yet and we want to define them in the future, or because there are certain concrete implementations that could share certain abstractions.
+This principle refers to the ability to leave more ambiguity in the software, either because we do not know all the details yet, or because there are certain concrete implementations that could share certain abstractions.
 
 Using the example above a Human and a Rabbit are mammals, in this context, both of them share the properties height and weight, but as Rabbit does not use a language to communicate, they do not share a language. In the same way, mammals can walk and run, but only the human can greet.
 
@@ -56,20 +56,21 @@ rabbit extends mammal
 In this example, both the human and the rabbit have the ability to walk and run because they are extending the definition of a mammal.
 
 == Encapsulation
-This concept says helps you by allowing you to hide parts of your object that you don't want to expose to other parts of your software.
+This concept helps you by allowing you to hide parts of your object that you don't want to expose to other parts of your software.
 
 Depending on the programming language there are multiple access modifiers, for now we will concentrate in the most common and restrictive which is the `private` modifier.
 
-In this example using the Human as a reference, we can have a software that calculates the velocity of a human. Once a human gets to a certain age it cannot change its height (there are now surgeries that can achieve this but for this example we will specify that the height cannot be changed).
+In this example using the Human as a reference, we can have a software that calculates the velocity of a human when carrying a weight. The height and weight of the human shouldn't be something that other components should be aware, even less to have the ability to alter it.
 
-Once a property is exposed, it can be changed from other parts of the software, but we do not want anyone to change the height once it has been defined, so we can mark it as private, which means that it can only be visible
+Once a property is exposed, it can be changed from other parts of the software and will depend on it, but we do not want anyone to change the internals of the class, so we can mark it as private, which means that it can only be visible inside the code living inside the class
 
 [%linenums,java]
 ----
 human
   private name
   private height
-  weight
+  private weight
+  weightToCarry
 
   human(name, height, weight)
     name = name
@@ -79,7 +80,7 @@ human
   runSpeedInOneMeter
     constantForWeightEffort = 1000
     percentageOfHeightThatRepresentsLenghts = 50
-    stepSpeed = (height * 50) - (weight/constantForWeightEffort)
+    stepSpeed = (height * 50) - (weight+weightToCarry/constantForWeightEffort)
     return stepSpeed
 ----
 
@@ -90,13 +91,15 @@ Now if we have a piece of software that uses this human object to calculate the 
 ----
 calculateSpeed(distance)
     damian = new Human(Damian, 1.90cm, 85kg)
-    //This will be valid as the weight property is visible and the weight can be altered later
-    damian.weight = 90kg
+    //This will be valid as the weightToCarry property is visible and the weightToCarry can be altered later
+    damian.weightToCarry = 90kg
 
     //This won't be valid as the height is not visible for any code that it's not inside the human class
     damian.height = 1.95cm
 ----
 
-The use of this principle comes when you want to hide details that you do not want other parts of your software that you might not even control to depend on these details. Most commonly because these details might change in the future and once that they change it will force the users of this software to change as well.
+The use of this principle is very useful when you want to hide details that you do not want other parts of your software depend on these details. Most commonly because these details might change in the future and once that they change it will force the users of this software to change as well.
 
-If you have worked with software for some time, you can see that something that was valid before is no longer valid, while there are some reasons that the maintainer of that software wants to force the users because the initial design no longer makes sense, some other times is because the maintainer was not careful enough to hide those details and when he had to change it, all the users had to pay the consequences.
+If you have worked with software for some time, you can see that something that was valid before is no longer valid, sometimes the method name is [.line-through]#crossed# because is marked as deprecated, which means that it shouldn't be used as it will disappear soon, some other times the method does not exist in new versions of the code.
+
+There are multiple reasons for this to happen, either because the maintainer of that software wants to force the users as the initial design no longer makes sense, some other times because the maintainer was not careful enough to hide those details and when he had to change it, all the users had to pay the consequences.
