@@ -1,1 +1,7 @@
 = Functional Programming
+
+The main concept behind functional programming is that you build your software using functions. The contrast with this paradigm and OOP is that a software to be "Functional" does not have to have a state (in OOP we mentioned that the main importance is the state).
+
+The reason that you cannot have a state in functional programming is that the current state of your object will affect the output that you get when you execute a function. In the functional paradigm, you want your functions to always return the same output given a same input, that means that there should not be any other factor that affects the software inside a function. If we put the constraints in place to make sure that the function output cannot be altered, we can pass that function as an argument.
+
+For example
