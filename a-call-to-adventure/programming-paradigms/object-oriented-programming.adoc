@@ -127,3 +127,23 @@ rabbit extends mammal
 ----
 
 In this example, both the human and the rabbit have the ability to walk and run because they are extending the definition of a mammal.
+
+This principle is mostly used when you want to reuse code or enforce certain signature that it's common between classes as they are the of the same kind (humans and rabbits are a kind of mammal, houses and restaurants are a kind of building, etc). This tends to be missed with other concept called composition which we will talk about that once we finish with all the object-oriented principles.
+
+== Composition
+There is a term often seen in software that says "Favor composition over inheritance" which it can be translated to something like, favor a hammer over a screwdriver. This doesn't sound correct, right? Why would you have to favor one over the other, sometimes you will need a hammer, and some other times you will need a screwdriver, but you need to understand when you need to use a screwdriver and when you need to use a hammer.
+
+The term composition refers to the ability to compose (build, assemble) an object through other objects. Coming back to the example of a human, you do not say that a hearth it's a kind of human, a human has a hearth, along legs, teeth, arms, etc)
+
+For example
+
+[%linenums,source]
+----
+human
+  hearth
+
+heart
+  bitsPerMinute
+----
+
+You want to use Inheritance when you need to define multiple types of a piece of software, a human, a rabbit, etc. And you use composition when your component depends on other components to work, a human needs a hearth to work, if it doesn't have one, it will die.
