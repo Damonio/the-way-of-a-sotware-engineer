@@ -29,9 +29,82 @@ human
 But this is not all OOP is about, it has also 4 principles that helps build software: abstraction, encapsulation, inheritance and polymorphism
 
 == Abstraction
-This principle refers to the ability to leave more ambiguity in the software, either because we do not know all the details yet, or because there are certain concrete implementations that could share certain abstractions.
+This principle refers to the ability to leave more ambiguity in the software, because we do not know all the details yet, or because there are certain concrete implementations that could share certain abstractions.
 
-Using the example above a Human and a Rabbit are mammals, in this context, both of them share the properties height and weight, but as Rabbit does not use a language to communicate, they do not share a language. In the same way, mammals can walk and run, but only the human can greet.
+For example, we have a software that will drive a car, we know that we have a car and this software has to start the engine, we do not have yet the type of the car (electric, gas or hybrid), and we do not know the brand of the car, yet we know that all the cars have an engine, and the engine has to be started, we just don't know how the engine will start, we can leave the definition that the car will have an action to start an engine, depending on the language and the context, you will have to use certain keywords, but the important part is that you will be able to define that the car has a property called engine and the engine has an action to start the engine.
+
+So the result will look like the next:
+
+[source]
+----
+Car
+  engine
+  abstract startEngine
+----
+
+Then later once that we have a specific car which we know how to start the engine, we can give the method definition
+
+[source]
+----
+Honda
+  engine
+  startEngine
+    //code to start the engine in a honda car
+----
+
+== Encapsulation
+This concept says helps you by allowing you to hide parts of your object that you don't want to expose to other parts of your software.
+
+Depending on the programming language there are multiple access modifiers, for now we will concentrate in the most common and restrictive which is the `private` modifier.
+
+In this example using the Human as a reference, we can have a software that calculates the velocity of a human carrying a weight. Only the class human should be able to change the weight or height, not other parts of the software.
+
+Once a property is exposed, it can be changed from other parts of the software,  so we can mark it as private, which means that it can only be visible inside the class human
+
+[%linenums,java]
+----
+human
+  private name
+  private height
+  private weight
+  carryingWeight
+
+  human(name, height, weight)
+    name = name
+    height = height
+    weight = weight
+
+  runSpeedInOneMeter
+    constantForWeightEffort = 1000
+    percentageOfHeightThatRepresentsLenghts = 50
+    stepSpeed = (height * 50) - ((weight+carryingWeight)/constantForWeightEffort)
+    return stepSpeed
+----
+
+Now if we have a software that uses this human object to calculate the velocity of a person in a distance carrying a weight, this software won't know that the human object has a property height or weight, it will only know that there is a property called carryingWeight, that can be changed at any point in time by the velocity software.
+
+
+[%linenums,source]
+----
+calculateSpeed(distance)
+    damian = new Human(Damian, 1.90cm, 85kg)
+    //This will be valid as the carryingWeight property is visible and the weight can be altered later
+    damian.carryingWeight = 90kg
+
+    //This won't be valid as the height is not visible for any code that it's not inside the human class
+    damian.height = 1.95cm
+----
+
+The use of this principle is very important when you want to hide details from other parts of your software, specially because you do not want them to depend on these details. Most commonly because these details might change in the future and once that they change it will force the users of this software to change as well.
+
+If you have worked with software for some time, you can see that something that was valid before is no longer valid either because the text in your code is now [.line-through]#crossed#, some other times you get a compilation or a runtime error because the software that you are trying to invoke no longer exist in new versions of the software (most commonly seen in libraries).
+
+While there are some reasons for this to happen, sometimes it's because the maintainer of that software wants to force the users as the initial design no longer makes sense, some other times is because the maintainer was not careful enough to hide those details and when he had to change them, all the users had to pay the consequences of breaking their code.
+
+== Inheritance
+This principle refers to the ability to inherit the object properties,
+
+Using the example above an about a Human, we know that a Rabbit is a mammals as well as a Human, in this context, both of them share the properties height and weight, but as Rabbit does not use a language to communicate, they do not share a language. In the same way, mammals can walk and run, but only the human can greet.
 
 With this in mind we can keep it DRY group together the same code into the mammal class
 
@@ -54,52 +127,3 @@ rabbit extends mammal
 ----
 
 In this example, both the human and the rabbit have the ability to walk and run because they are extending the definition of a mammal.
-
-== Encapsulation
-This concept helps you by allowing you to hide parts of your object that you don't want to expose to other parts of your software.
-
-Depending on the programming language there are multiple access modifiers, for now we will concentrate in the most common and restrictive which is the `private` modifier.
-
-In this example using the Human as a reference, we can have a software that calculates the velocity of a human when carrying a weight. The height and weight of the human shouldn't be something that other components should be aware, even less to have the ability to alter it.
-
-Once a property is exposed, it can be changed from other parts of the software and will depend on it, but we do not want anyone to change the internals of the class, so we can mark it as private, which means that it can only be visible inside the code living inside the class
-
-[%linenums,java]
-----
-human
-  private name
-  private height
-  private weight
-  weightToCarry
-
-  human(name, height, weight)
-    name = name
-    height = height
-    weight = weight
-
-  runSpeedInOneMeter
-    constantForWeightEffort = 1000
-    percentageOfHeightThatRepresentsLenghts = 50
-    stepSpeed = (height * 50) - (weight+weightToCarry/constantForWeightEffort)
-    return stepSpeed
-----
-
-Now if we have a piece of software that uses this human object to calculate the velocity of a person in a distance provided in this software. This software won't know that the human object has a property height, it will only know that there is a property called weight, that can be changed at any point in time by the velocity software.
-
-
-[%linenums,source]
-----
-calculateSpeed(distance)
-    damian = new Human(Damian, 1.90cm, 85kg)
-    //This will be valid as the weightToCarry property is visible and the weightToCarry can be altered later
-    damian.weightToCarry = 90kg
-
-    //This won't be valid as the height is not visible for any code that it's not inside the human class
-    damian.height = 1.95cm
-----
-
-The use of this principle is very useful when you want to hide details that you do not want other parts of your software depend on these details. Most commonly because these details might change in the future and once that they change it will force the users of this software to change as well.
-
-If you have worked with software for some time, you can see that something that was valid before is no longer valid, sometimes the method name is [.line-through]#crossed# because is marked as deprecated, which means that it shouldn't be used as it will disappear soon, some other times the method does not exist in new versions of the code.
-
-There are multiple reasons for this to happen, either because the maintainer of that software wants to force the users as the initial design no longer makes sense, some other times because the maintainer was not careful enough to hide those details and when he had to change it, all the users had to pay the consequences.
