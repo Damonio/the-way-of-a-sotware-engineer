@@ -117,18 +117,40 @@ mammal
   walk
   run
 
-human extends mammal
+human is a mammal
   motherLanguage
 
   greet
 
-rabbit extends mammal
+rabbit is a mammal
 
 ----
 
 In this example, both the human and the rabbit have the ability to walk and run because they are extending the definition of a mammal.
 
 This principle is mostly used when you want to reuse code or enforce certain signature that it's common between classes as they are the of the same kind (humans and rabbits are a kind of mammal, houses and restaurants are a kind of building, etc). This tends to be missed with other concept called composition which we will talk about that once we finish with all the object-oriented principles.
+
+== Polymorphism
+
+We cannot talk about polymorphism without knowing inheritance, if you haven't gone through that section, you should go and revisit it as it will be harder to understand polymorphism.
+
+Polymorphism refers to the ability to the object to have multiple shapes, the shapes are defined through inheritance as you can define a common parent and define multiple children depending on the need of your software.
+
+Using the Delorean from back to the future movie, this car had the ability to be driven in a regular street, but at the same time, it had the ability to drive in the air, in this case we can define 2 types of transportation, a flying transportation and a ground transportation.
+
+
+[%linenums,source]
+----
+AirTransportation
+  fly
+
+GroundTransportation
+  drive
+
+Delorean is a AirTransportation and GroundTransportation
+----
+
+So in this case, when you need to go to do your groceries, you can use the Delorean to pick up your groceries, but if you need to go to an island, you can go flying.
 
 == Composition
 There is a term often seen in software that says "Favor composition over inheritance" which it can be translated to something like, favor a hammer over a screwdriver. This doesn't sound correct, right? Why would you have to favor one over the other, sometimes you will need a hammer, and some other times you will need a screwdriver, but you need to understand when you need to use a screwdriver and when you need to use a hammer.
