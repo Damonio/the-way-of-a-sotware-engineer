@@ -168,4 +168,4 @@ heart
   bitsPerMinute
 ----
 
-You want to use Inheritance when you need to define multiple types of a piece of software, a human, a rabbit, etc. And you use composition when your component depends on other components to work, a human needs a hearth to work, if it doesn't have one, it will die.
+You want to use Inheritance when you need to define multiple types of a piece of software, a human, a rabbit, etc. And you use composition when your component depends on other components to work, a human needs/depends on a hearth to live, if it doesn't have one, it will die.

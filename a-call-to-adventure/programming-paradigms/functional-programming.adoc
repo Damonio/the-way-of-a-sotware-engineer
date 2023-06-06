@@ -2,6 +2,31 @@
 
 The main concept behind functional programming is that you build your software using functions. The contrast with this paradigm and OOP is that a software to be "Functional" does not have to have a state (in OOP we mentioned that the main importance is the state).
 
-The reason that you cannot have a state in functional programming is that the current state of your object will affect the output that you get when you execute a function. In the functional paradigm, you want your functions to always return the same output given a same input, that means that there should not be any other factor that affects the software inside a function. If we put the constraints in place to make sure that the function output cannot be altered, we can pass that function as an argument.
+The reason that you cannot have a state in functional programming is that the current state of your object will affect the output that you get when you execute a function. In the functional paradigm, you want your functions to always return the same output given the same input; that means that there should not be any other factor that affects the software inside a function. If we put the constraints in place to make sure that the function output cannot be altered, we can pass that function as an argument to another function.
 
-For example
+One of the constraints that you can use in functional programming is to use immutable objects. This allows us to send data over functions that cannot be modified by altering the state, you need to create a new instance. By doing so, you avoid any race condition when using multiple threads to run your application as your software cannot modify any data that other parts of your software are currently using.
+
+In the current day, there are programming languages that favor to use functional programming and other that favor to use classes, it's up to the developer to decide which tools fits better, but you will be able to tell the difference if the language forces you (or heavily ask you to) use certain one of the ways to build your software.
+
+For example, let's assume that you have a company that sends packages to a place,
+and depending on the size, they might be delivered through a plane, truck or a ship.
+Also, depending on the country of the destination and the of arrival, you might have to calculate different things like taxes or other things that might only apply to very specific trips, so we should have the ability to change the function that calculates the cost of the trip without changing the main part of the calculation as it's the same.
+
+Depending on the language, you might have to use a specific syntax to define the function and some other syntax to execute the function, for illustrative purposes, I'll use execute to execute a function.
+
+For this example, I'll avoid using any OOP concept to make sure that concepts are not mixed, that being said, with the current programing languages, it's possible to build software using both of the concepts depending on the requirements you have.
+
+[source,java]
+----
+calculateDeliveryCost(packages, calculateAirCost, calculateSeaCost, calculateLandCost)
+    airCost = calculateAirCost.execute(packages)
+    seaCost = calculateSeaCost.execute(packages)
+    landCost = calculateLandCost.execute(packages)
+    return airCost + seaCost + landCost
+
+calculateDeliveryCost(packages, fromCountry, toCountry)
+    calculateAirCost = findFunctionToCalculateAirCost(fromCountry, toCountry)
+    calculateseaCost = findFunctionToCalculateseaCost(fromCountry, toCountry)
+    calculatelandCostCost = findFunctionToCalculateAirCost(fromCountry, toCountry)
+    return calculateDeliveryCost(packages, calculateAirCost, calculateAirCost, calculatelandCostCost)
+----

@@ -134,3 +134,20 @@ Do not repeat yourself, a very important (if not the most important) yet sometim
 
 == KISS
 Keep it short and simple. Usually in software engineering, it's very common to see "over-engineered" projects, that are more complicated that it should be, in general the rule is that do not create things that you will need
+
+== Thread
+A thread refers to the number of paths of execution, when you code a software that can have multiple threads, it means that it can be executed at the same time.
+
+A CPU nowadays contains multiple core units that have a number of thread executors, the ability for the CPU to process multiple threads at the same time will depend greatly on the amount of threads executors it has.
+
+Multi threading is very useful in situations when some parts of the software have to wait for any reason while other parts of the software can continue working.
+
+== Global variables
+These variables have the broadest context possible in the software that you are building. While they can be useful in some places, they bring a great risk as they can be manipulated from any part of the software at any given point in time. The higher the scope of a piece of software like a variable or a method has, the higher is the chance that you will have to use other tools to reduce the ability to manipulate it.
+
+== Immutability
+A current state of something cannot change, like a function, method, variable, etc. The more you have the ability to change something already defined in software, the better it has to be handled, specially if it can be referenced in multiple places.
+
+When you have a software that you want to run multiple threads as it support multiple executions of certain pieces of your program at the same time, the higher are the chances that you want to use immutability as you might want to control that only a single part of the program alters this output at a time for a better control.
+
+A way to work with immutability is that you create new instances of the same software rather than to alter the state, in that sense, you only have one state at all point in a software which reduces the risk of altering the values in multiple places when you do not want to.
