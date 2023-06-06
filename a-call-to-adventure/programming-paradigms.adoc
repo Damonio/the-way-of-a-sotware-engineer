@@ -9,6 +9,7 @@ As of writing this, the 2 most common and misunderstood paradigms are object-ori
 2. Usually when learning a programming concept, it's very common that it comes mixed with some other things, like a language grammar, syntax or constraints, that makes it harder to understand, for the purposes of illustrating a concept, the concepts presented in this book will be as neutral as possible, which might end not being usable in a real language, but that might help to understand the concept
 
 
-
+<<<
 include::programming-paradigms/object-oriented-programming.adoc[leveloffset=1]
+<<<
 include::programming-paradigms/functional-programming.adoc[leveloffset=1]
