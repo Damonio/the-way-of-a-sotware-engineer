@@ -1,6 +1,6 @@
 = The way of a software engineer - A call to adventure
-
 :toc:
+
 <<<
 include::preface.adoc[leveloffset=1]
 <<<
