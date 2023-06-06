@@ -7,7 +7,7 @@ Engineer is a person specialized in an area that can invent and/or create new th
 
 So in rough terms, a software engineer is someone specialized in software that can create software.
 
-A good practical example of what its software in very simple terms that I learnt in school is that software can be compared to a recipe. A series of instructions out of any ambiguity, if these instructions are followed as described, you will always get the same result, like baking a cake.
+A good practical example of what its software in basic terms that I learnt in school is that software can be compared to a recipe. A series of instructions out of any ambiguity, if these instructions are followed as described, you will always get the same result, like baking a cake.
 
 For example:
 
